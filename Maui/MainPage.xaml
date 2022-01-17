@@ -4,46 +4,75 @@
              BackgroundColor="{DynamicResource SecondaryColor}">
 
     <ScrollView>
-        <Grid RowSpacing="25" RowDefinitions="Auto,Auto,Auto,Auto,*"
-              Padding="{OnPlatform iOS='30,60,30,30', Default='30'}">
+        <Grid RowSpacing="25"
+              RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,*"
+              Padding="{OnPlatform iOS='30,60,30,60', Default='30'}">
 
+            <Image Grid.Row="0"
+                Source="header_dark.png"
+                SemanticProperties.Description="mRemoteNG Logo"
+                WidthRequest="450"
+                HeightRequest="120"
+                HorizontalOptions="Center" />
+            
             <Label 
-                Text="Hello, World!"
-                Grid.Row="0"
+                Text="Welcome to mRemoteNG"
+                Grid.Row="1"
                 SemanticProperties.HeadingLevel="Level1"
                 FontSize="32"
                 HorizontalOptions="Center" />
 
             <Label 
-                Text="Welcome to .NET Multi-platform App UI"
-                Grid.Row="1"
+                Text="v1.8.0-test_maui-preview"
+                Grid.Row="2"
                 SemanticProperties.HeadingLevel="Level1"
                 SemanticProperties.Description="Welcome to dot net Multi platform App U I"
                 FontSize="18"
                 HorizontalOptions="Center" />
 
-            <Label 
-                Text="Current count: 0"
-                Grid.Row="2"
-                FontSize="18"
-                FontAttributes="Bold"
-                x:Name="CounterLabel"
+            <Button 
+                Text="New Database"
+                WidthRequest="600"
+                Grid.Row="3"
+                SemanticProperties.Hint="Counts the number of times you click"
                 HorizontalOptions="Center" />
 
             <Button 
-                Text="Click me"
-                FontAttributes="Bold"
-                Grid.Row="3"
+                Text="Open Database..."
+                WidthRequest="600"
+                Grid.Row="4"
                 SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
                 HorizontalOptions="Center" />
 
-            <Image Grid.Row="4"
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                WidthRequest="250"
-                HeightRequest="310"
-                HorizontalOptions="Center" />
+            <Grid ColumnSpacing="30"
+                  ColumnDefinitions="Auto,Auto,Auto"
+                  Grid.Row ="5"
+                  HorizontalOptions="Center">
+
+                <Button 
+                    Text="Import from legacy mRemoteNG"
+                    WidthRequest="285"
+                    Grid.Column="0"
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    HorizontalOptions="Center" />
+
+                <Button 
+                    Text="Import from File"
+                    WidthRequest="285"
+                    Grid.Column="1"
+                    SemanticProperties.Hint="Counts the number of times you click"
+                    HorizontalOptions="Center" />
+            </Grid>
+
+            <Label 
+                Text="Last used Databases:"
+                Grid.Row="6"
+                SemanticProperties.HeadingLevel="Level1"
+                FontSize="12" />
+
+            <CollectionView 
+			    Grid.Row="7"
+                SemanticProperties.Hint="Counts the number of times you click"/>
 
         </Grid>
     </ScrollView>
